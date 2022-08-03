@@ -14,13 +14,17 @@
 
         }
 
-        .add {
+        .add, .removeBtn {
             background-color: aqua;
             border-radius: 25px;
-            padding: 10px 20px;
+            padding: 10px;
             font-weight: bolder;
         }
 
+        .add:hover, .removeBtn:hover{
+            background-color: rgb(37, 82, 82);
+            color: white;
+        }
         .container {
             /* width: 100%; */
             padding: 20px;
@@ -56,6 +60,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+       
     </style>
 </head>
 
@@ -92,11 +97,13 @@
         </table>
     </div>
     <script>
+        //variable assigning
+
         let formEl = document.querySelector("form");
         let tbodyEl = document.querySelector("tbody");
         let tableEl = document.querySelector("table");
 
-
+        //adding row function
         function onAdd(e) {
             e.preventDefault();
             let namee = document.getElementById("nameid").value;
@@ -112,19 +119,18 @@
         `;
         }
 
-        function onDelete(event) {
-            if (!event.target.classList.contains("removeBtn")) {
+        //delete the row function
+        function onDeleteRow(e) {
+            if (!e.target.classList.contains("removeBtn")) {
                 return;
             }
 
-            const btn = event.target;
+            let btn = e.target;
             btn.closest("tr").remove();
         }
 
         formEl.addEventListener("submit", onAdd);
-        formEl.addEventListener("click", onDelete);
-
-
+        formEl.addEventListener("click", onDeleteRow);
 
     </script>
 </body>
