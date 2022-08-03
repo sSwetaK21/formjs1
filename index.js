@@ -26,9 +26,9 @@
           return;
       }
 
-      let btn = e.target;
+      const btn = e.target;
       btn.closest("tr").remove();
   }
 
   formEl.addEventListener("submit", onAdd);
-  formEl.addEventListener("click", onDeleteRow);
+  tableEl.addEventListener("click", onDeleteRow);
