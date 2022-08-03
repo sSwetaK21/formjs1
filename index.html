@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #AED6F1;
+
+        }
+
+        .add {
+            background-color: aqua;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: bolder;
+        }
+
+        .container {
+            /* width: 100%; */
+            padding: 20px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        input {
+            width: 25%;
+            padding: 10px;
+        }
+
+        .mytable {
+            table-layout: fixed;
+            width: 100%;
+            background-color: #76D7C4;
+        }
+
+        thead {
+            background-color: #1ABC9C;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid #0B5345;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form>
+            <input type="text" id="nameid" placeholder="Enter your name">
+            <input type="email" id="email" placeholder="Email here - abc@email.com">
+            <input type="text" id="phone" placeholder="Enter your Phone no">
+            <button class="add">ADD</button>
+
+        </form>
+
+        <table class="mytable">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone no
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        let formEl = document.querySelector("form");
+        let tbodyEl = document.querySelector("tbody");
+        let tableEl = document.querySelector("table");
+
+
+
+
+        function onAdd(e) {
+            e.preventDefault();
+            let namee = document.getElementById("nameid").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            tbodyEl.innerHTML += `
+            <tr>
+                <td>${namee}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
+                <td><button class="removeBtn">Remove</button></td>
+            </tr>
+        `;
+        }
+
+        function onDelete(event) {
+            if (!event.target.classList.contains("removeBtn")) {
+                return;
+            }
+
+            const btn = event.target;
+            btn.closest("tr").remove();
+        }
+
+        formEl.addEventListener("submit", onAdd);
+        formEl.addEventListener("click", onDelete);
+
+
+
+    </script>
+</body>
+
+</html>
