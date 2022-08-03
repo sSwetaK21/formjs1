@@ -5,63 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #AED6F1;
-
-        }
-
-        .add, .removeBtn {
-            background-color: aqua;
-            border-radius: 25px;
-            padding: 10px;
-            font-weight: bolder;
-        }
-
-        .add:hover, .removeBtn:hover{
-            background-color: rgb(37, 82, 82);
-            color: white;
-        }
-        .container {
-            /* width: 100%; */
-            padding: 20px;
-        }
-
-        form {
-            width: 100%;
-        }
-
-        input {
-            width: 25%;
-            padding: 10px;
-        }
-
-        .mytable {
-            table-layout: fixed;
-            width: 100%;
-            margin: 20px 0px;
-            background-color: #76D7C4;
-        }
-
-        thead {
-            background-color: #1ABC9C;
-        }
-
-        table,
-        th,
-        td {
-            border: 2px solid #0B5345;
-            border-collapse: collapse;
-            text-align: center;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-       
-    </style>
+  
 </head>
 
 <body>
@@ -96,43 +42,8 @@
             <tbody></tbody>
         </table>
     </div>
-    <script>
-        //variable assigning
 
-        let formEl = document.querySelector("form");
-        let tbodyEl = document.querySelector("tbody");
-        let tableEl = document.querySelector("table");
-
-        //adding row function
-        function onAdd(e) {
-            e.preventDefault();
-            let namee = document.getElementById("nameid").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            tbodyEl.innerHTML += `
-            <tr>
-                <td>${namee}</td>
-                <td>${email}</td>
-                <td>${phone}</td>
-                <td><button class="removeBtn">Remove</button></td>
-            </tr>
-        `;
-        }
-
-        //delete the row function
-        function onDeleteRow(e) {
-            if (!e.target.classList.contains("removeBtn")) {
-                return;
-            }
-
-            let btn = e.target;
-            btn.closest("tr").remove();
-        }
-
-        formEl.addEventListener("submit", onAdd);
-        formEl.addEventListener("click", onDeleteRow);
-
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

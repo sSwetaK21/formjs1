@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #AED6F1;
+
+}
+
+.add, .removeBtn {
+    background-color: aqua;
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.add:hover, .removeBtn:hover{
+    background-color: rgb(37, 82, 82);
+    color: white;
+}
+.container {
+    /* width: 100%; */
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+input {
+    width: 25%;
+    padding: 10px;
+}
+
+.mytable {
+    table-layout: fixed;
+    width: 100%;
+    margin: 20px 0px;
+    background-color: #76D7C4;
+}
+
+thead {
+    background-color: #1ABC9C;
+}
+
+table,
+th,
+td {
+    border: 2px solid #0B5345;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
